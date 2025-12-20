@@ -4,6 +4,7 @@ import {
   StyleSheet,
   FlatList,
   TouchableOpacity,
+  Modal,
 } from 'react-native';
 import { useState } from 'react';
 
@@ -36,6 +37,14 @@ const NoteScreen = () => {
       >
         <Text style={styles.addButtonText}>+ Add Note</Text>
       </TouchableOpacity>
+
+      {/* Modal */}
+      <Modal
+        visible={modalVisible}
+        animationType='slide'
+        transparent
+        onRequestClose={() => setModalVisible(false)}
+      ></Modal>
     </View>
   );
 };
