@@ -14,6 +14,9 @@ const NoteScreen = () => {
     { id: '3', text: 'Note Three' },
   ]);
 
+  const [modalVisible, setModalVisible] = useState(false);
+  const [newNote, setNewNote] = useState('');
+
   return (
     <View style={styles.container}>
       <FlatList
@@ -27,7 +30,10 @@ const NoteScreen = () => {
       />
 
       {/* Even without the styling inserting, the <FlatList> above will style to flex-grow: 1, which will force the button at the bottom.*/}
-      <TouchableOpacity style={styles.addButton}>
+      <TouchableOpacity
+        style={styles.addButton}
+        onPress={() => setModalVisible(true)}
+      >
         <Text style={styles.addButtonText}>+ Add Note</Text>
       </TouchableOpacity>
     </View>
