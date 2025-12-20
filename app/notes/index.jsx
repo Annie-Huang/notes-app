@@ -1,4 +1,10 @@
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
 import { useState } from 'react';
 
 const NoteScreen = () => {
@@ -19,6 +25,11 @@ const NoteScreen = () => {
           </View>
         )}
       />
+
+      {/* Even without the styling inserting, the <FlatList> above will style to flex-grow: 1, which will force the button at the bottom.*/}
+      <TouchableOpacity style={styles.addButton}>
+        <Text style={styles.addButtonText}>+ Add Note</Text>
+      </TouchableOpacity>
     </View>
   );
 };
