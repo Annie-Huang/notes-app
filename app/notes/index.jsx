@@ -5,6 +5,7 @@ import {
   FlatList,
   TouchableOpacity,
   Modal,
+  TextInput,
 } from 'react-native';
 import { useState } from 'react';
 
@@ -44,7 +45,20 @@ const NoteScreen = () => {
         animationType='slide'
         transparent
         onRequestClose={() => setModalVisible(false)}
-      ></Modal>
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <Text style={styles.modalTitle}>Add a new Note</Text>
+            <TextInput
+              style={styles.input}
+              placeholder='Enter note...'
+              placeholderTextColor='#aaa'
+              value={newNote}
+              onChangeText={(newNote) => setNewNote(newNote)}
+            />
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 };
