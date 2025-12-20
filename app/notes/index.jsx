@@ -35,7 +35,7 @@ const NoteScreen = () => {
 
   return (
     <View style={styles.container}>
-      <NoteLists notes={notes} />
+      <NoteList notes={notes} />
 
       {/* Even without the styling inserting, the <FlatList> above will style to flex-grow: 1, which will force the button at the bottom.*/}
       <TouchableOpacity
@@ -85,17 +85,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     backgroundColor: '#fff',
-  },
-  noteItem: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    backgroundColor: '#f5f5f5',
-    padding: 15,
-    borderRadius: 5,
-    marginVertical: 5,
-  },
-  noteText: {
-    fontSize: 18,
   },
   addButton: {
     position: 'absolute',
