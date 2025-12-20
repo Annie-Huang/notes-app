@@ -8,6 +8,7 @@ import {
   TextInput,
 } from 'react-native';
 import { useState } from 'react';
+import NoteList from '@/components/NoteList';
 
 const NoteScreen = () => {
   const [notes, setNotes] = useState([
@@ -34,15 +35,7 @@ const NoteScreen = () => {
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={notes}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
-          <View style={styles.noteItem}>
-            <Text style={styles.noteText}>{item.text}</Text>
-          </View>
-        )}
-      />
+      <NoteLists notes={notes} />
 
       {/* Even without the styling inserting, the <FlatList> above will style to flex-grow: 1, which will force the button at the bottom.*/}
       <TouchableOpacity
