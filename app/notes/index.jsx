@@ -4,11 +4,12 @@ import NoteList from '@/components/NoteList';
 import AddNoteModal from '@/components/AddNoteModal';
 
 const NoteScreen = () => {
-  const [notes, setNotes] = useState([
-    { id: '1', text: 'Note One' },
-    { id: '2', text: 'Note Two' },
-    { id: '3', text: 'Note Three' },
-  ]);
+  // const [notes, setNotes] = useState([
+  //   { id: '1', text: 'Note One' },
+  //   { id: '2', text: 'Note Two' },
+  //   { id: '3', text: 'Note Three' },
+  // ]);
+  const [notes, setNotes] = useState([]);
 
   const [modalVisible, setModalVisible] = useState(false);
   const [newNote, setNewNote] = useState('');
