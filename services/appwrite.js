@@ -13,6 +13,7 @@ const config = {
 const client = new Client()
   .setEndpoint(config.endpoint)
   .setProject(config.projectId);
+// .setPlatform('http://localhost:8081/');
 
 switch (Platform.OS) {
   case 'ios':
