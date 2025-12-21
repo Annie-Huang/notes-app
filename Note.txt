@@ -35,5 +35,6 @@ PS C:\react\notes-app> npm start        >> Choose w
 http://localhost:8081/
 PS C:\react\notes-app> npm run reset-project
 PS C:\react\notes-app> npm run web
+PS C:\react\notes-app> npm run android      << this one also work because i have installed Android emulator in my home PC
 
 PS C:\react\notes-app> npx expo install react-native-appwrite react-native-url-polyfill
