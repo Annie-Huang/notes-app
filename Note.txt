@@ -4,6 +4,7 @@ https://github.com/bradtraversy/notes-app
 https://github.com/Annie-Huang/notes-app
 
 https://reactnative.dev/docs/environment-setup
+https://github.com/appwrite/starter-for-react-native/tree/main
 ==============================================================
 
 PS C:\react> npx create-expo-app@latest notes-app
