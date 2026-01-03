@@ -74,7 +74,7 @@ const NoteScreen = () => {
       ) : (
         <>
           {error && <Text style={styles.errorText}>{error}</Text>}{' '}
-          <NoteList notes={notes} />
+          <NoteList notes={notes} onDelete={deleteNote} />
         </>
       )}
 
