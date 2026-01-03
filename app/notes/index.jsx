@@ -66,6 +66,21 @@ const NoteScreen = () => {
     setModalVisible(false);
   };
 
+  // Delete Note
+  const deleteNote = async (id) => {
+    // The Alert component will only show in mobile, it will not show in web site version.
+    Alert.alert('Delete Note', 'Are you sure you want to delete this note', [
+      {
+        text: 'Cancel',
+        style: 'cancel', // it will know to do nothing when user click this button.
+      },
+      {
+        text: 'Delete',
+        style: 'destructive',
+      },
+    ]);
+  };
+
   return (
     <View style={styles.container}>
       {/*<NoteList notes={notes} />*/}
