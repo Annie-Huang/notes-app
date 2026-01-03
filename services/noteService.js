@@ -14,6 +14,12 @@ const noteService = {
     }
     return { data: response };
   },
+  // Add New Note
+  async addNote(text) {
+    if (!text) {
+      return { error: 'Note text cannot be empty' };
+    }
+  },
 };
 
 export default noteService;
