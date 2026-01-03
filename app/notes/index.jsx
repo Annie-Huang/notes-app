@@ -77,6 +77,14 @@ const NoteScreen = () => {
       {
         text: 'Delete',
         style: 'destructive',
+        onPress: async () => {
+          const response = await noteService.deleteNote(id);
+          if (response.error) {
+            Alert.alert('Error', response.error);
+          } else {
+            setNotes(notes.filter((note) => note.$id !== id));
+          }
+        },
       },
     ]);
   };

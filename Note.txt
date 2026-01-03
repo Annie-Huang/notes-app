@@ -38,3 +38,6 @@ PS C:\react\notes-app> npm run web
 PS C:\react\notes-app> npm run android      << this one also work because i have installed Android emulator in my home PC
 
 PS C:\react\notes-app> npx expo install react-native-appwrite react-native-url-polyfill
+
+Note:
+Delete can only be done in mobile app as Alert component only work in mobile, not web site version.
