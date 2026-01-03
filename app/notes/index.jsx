@@ -6,31 +6,32 @@ import AddNoteModal from '@/components/AddNoteModal';
 import noteService from '@/services/noteService';
 
 const NoteScreen = () => {
-  const [notes, setNotes] = useState([
-    { id: '1', text: 'Note One' },
-    { id: '2', text: 'Note Two' },
-    { id: '3', text: 'Note Three' },
-  ]);
-  // const [notes, setNotes] = useState([]);
+  // const [notes, setNotes] = useState([
+  //   { id: '1', text: 'Note One' },
+  //   { id: '2', text: 'Note Two' },
+  //   { id: '3', text: 'Note Three' },
+  // ]);
+  const [notes, setNotes] = useState([]);
 
   const [modalVisible, setModalVisible] = useState(false);
   const [newNote, setNewNote] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // useEffect(() => {
-  //   fetchNotes();
-  // }, []);
+  useEffect(() => {
+    fetchNotes();
+  }, []);
 
   const fetchNotes = async () => {
     setLoading(true);
     const response = await noteService.getNotes();
+    console.log('response=', response);
 
     if (response.error) {
       setError(response.error);
       Alert.alert('Error', response.error);
     } else {
-      setNotes(response.data);
+      setNotes(response.data.data);
       setError(null);
     }
 
