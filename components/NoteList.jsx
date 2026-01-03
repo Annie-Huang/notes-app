@@ -6,7 +6,8 @@ const NoteList = ({ notes }) => {
     <View>
       <FlatList
         data={notes}
-        keyExtractor={(item) => item.id}
+        // keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.$id} // $id is the one store in the Appwrite DB rather than hard code array value.
         renderItem={({ item }) => <NoteItem note={item} />}
       />
     </View>
