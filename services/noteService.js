@@ -31,6 +31,12 @@ const noteService = {
       data,
       ID.unique(),
     );
+
+    if (response?.error) {
+      return { error: response.error };
+    }
+
+    return { data: response };
   },
 };
 
