@@ -1,4 +1,11 @@
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Alert,
+  ActivityIndicator,
+} from 'react-native';
 import { useEffect, useState } from 'react';
 import NoteList from '@/components/NoteList';
 import AddNoteModal from '@/components/AddNoteModal';
@@ -61,7 +68,15 @@ const NoteScreen = () => {
 
   return (
     <View style={styles.container}>
-      <NoteList notes={notes} />
+      {/*<NoteList notes={notes} />*/}
+      {loading ? (
+        <ActivityIndicator size='large' color='#007bff' />
+      ) : (
+        <>
+          {error && <Text style={styles.errorText}>{error}</Text>}{' '}
+          <NoteList notes={notes} />
+        </>
+      )}
 
       {/* Even without the styling inserting, the <FlatList> in <NoteList> above will style to flex-grow: 1, which will force the button at the bottom.*/}
       <TouchableOpacity
@@ -102,6 +117,12 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  errorText: {
+    color: 'red',
+    textAlign: 'center',
+    marginBottom: 10,
+    fontSize: 16,
   },
 });
 
