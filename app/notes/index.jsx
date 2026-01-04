@@ -31,6 +31,12 @@ const NoteScreen = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!authLoading && !user) {
+      router.replace('/auth');
+    }
+  }, [user, authLoading]);
+
+  useEffect(() => {
     fetchNotes();
   }, []);
 
