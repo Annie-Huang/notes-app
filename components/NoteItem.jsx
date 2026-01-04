@@ -39,7 +39,9 @@ const NoteItem = ({ note, onDelete }) => {
             <Text style={styles.edit}>💾</Text>
           </TouchableOpacity>
         ) : (
-          <></>
+          <TouchableOpacity onPress={() => setIsEditing(true)}>
+            <Text style={styles.edit}>✏️</Text>
+          </TouchableOpacity>
         )}
 
         <TouchableOpacity onPress={() => onDelete(note.$id)}>
