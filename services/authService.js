@@ -13,6 +13,20 @@ const authService = {
       };
     }
   },
+  // Login
+  async login(email, password) {
+    try {
+      const response = await account.createEmailPasswordSession(
+        email,
+        password,
+      );
+      return response;
+    } catch (error) {
+      return {
+        error: error.message || 'Login failed. Please check your credentials',
+      };
+    }
+  },
 };
 
 export default authService;
