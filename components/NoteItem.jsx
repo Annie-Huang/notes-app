@@ -29,6 +29,19 @@ const NoteItem = ({ note, onDelete }) => {
       )}
 
       <View style={styles.actions}>
+        {isEditing ? (
+          <TouchableOpacity
+            onPress={() => {
+              handleSave();
+              inputRef.current?.blur();
+            }}
+          >
+            <Text style={styles.edit}>💾</Text>
+          </TouchableOpacity>
+        ) : (
+          <></>
+        )}
+
         <TouchableOpacity onPress={() => onDelete(note.$id)}>
           <Text style={styles.delete}>❌</Text>
         </TouchableOpacity>
