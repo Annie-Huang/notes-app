@@ -26,7 +26,7 @@ const NoteItem = ({ note, onDelete, onEdit }) => {
           ref={inputRef}
           style={styles.input}
           value={editedText}
-          onChange={setEditedText}
+          onChangeText={setEditedText} // Use onChangeText rather than onChange as onChange will take event as input.
           autoFocus
           onSubmitEditing={handleSave}
           returnKeyType='done' // https://reactnative.dev/docs/textinput#returnkeytype
