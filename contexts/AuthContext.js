@@ -51,4 +51,10 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
     await checkUser(); // why do we need to make this call again? Is the result cached?
   };
+
+  return (
+    <AuthProvider.Provider value={{ user, login, register, logout, loading }}>
+      {children}
+    </AuthProvider.Provider>
+  );
 };
