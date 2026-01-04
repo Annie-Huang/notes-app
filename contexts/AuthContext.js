@@ -11,6 +11,7 @@ export const AuthProvider = ({ children }) => {
     checkUser();
   }, []);
 
+  // This method is to setUser if user is logged in.
   const checkUser = async () => {
     setLoading(true);
     const response = await authService.getUser();
@@ -22,5 +23,16 @@ export const AuthProvider = ({ children }) => {
     }
 
     setLoading(false);
+  };
+
+  const login = async (email, password) => {
+    const response = await authService.login(email, password);
+
+    if (response?.error) {
+      return response;
+    }
+
+    await checkUser();
+    return { success: true };
   };
 };
