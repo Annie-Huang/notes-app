@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { useState } from 'react';
 
 const AuthScreen = () => {
@@ -10,7 +10,9 @@ const AuthScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text>Auth</Text>
+      <Text style={styles.header}>{isRegistering ? 'Sign Up' : 'Login'}</Text>
+
+      {error && <Text style={styles.error}>{error}</Text>}
     </View>
   );
 };
