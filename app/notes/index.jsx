@@ -36,9 +36,14 @@ const NoteScreen = () => {
     }
   }, [user, authLoading]);
 
-  useEffect(() => {
+  /*  useEffect(() => {
     fetchNotes();
-  }, []);
+  }, []);*/
+  useEffect(() => {
+    if (user) {
+      fetchNotes();
+    }
+  }, [user]);
 
   const fetchNotes = async () => {
     setLoading(true);
