@@ -11,8 +11,13 @@ import NoteList from '@/components/NoteList';
 import AddNoteModal from '@/components/AddNoteModal';
 // import notesService from '../../services/noteService';
 import noteService from '@/services/noteService';
+import { useRouter } from 'expo-router';
+import { useAuth } from '../../contexts/AuthContext';
 
 const NoteScreen = () => {
+  const router = useRouter();
+  const { user, loading: authLoading } = useAuth();
+
   // const [notes, setNotes] = useState([
   //   { id: '1', text: 'Note One' },
   //   { id: '2', text: 'Note Two' },
