@@ -12,6 +12,10 @@ const NoteItem = ({ note, onDelete }) => {
   const [editedText, setEditedText] = useState(note.text);
   const inputRef = useRef(null);
 
+  const handleSave = () => {
+    if (editedText.trim() === '') return;
+  };
+
   return (
     <View style={styles.noteItem}>
       {isEditing ? (
