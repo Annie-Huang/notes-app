@@ -68,6 +68,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: 'red',
   },
+  actions: {
+    flexDirection: 'row',
+  },
+  edit: {
+    fontSize: 18,
+    marginRight: 10,
+    color: 'blue',
+  },
 });
 
 export default NoteItem;
