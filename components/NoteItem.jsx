@@ -1,5 +1,11 @@
 import { useState, useRef } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 const NoteItem = ({ note, onDelete }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -8,7 +14,20 @@ const NoteItem = ({ note, onDelete }) => {
 
   return (
     <View style={styles.noteItem}>
-      <Text style={styles.noteText}>{note.text}</Text>
+      {isEditing ? (
+        <TextInput
+          ref={inputRef}
+          style={styles.input}
+          value={editedText}
+          onChange={setEditedText}
+          autoFocus
+          onSubmitEditing={handleSave}
+          returnKeyType='done' // https://reactnative.dev/docs/textinput#returnkeytype
+        />
+      ) : (
+        <Text style={styles.noteText}>{note.text}</Text>
+      )}
+
       <TouchableOpacity onPress={() => onDelete(note.$id)}>
         <Text style={styles.delete}>❌</Text>
       </TouchableOpacity>

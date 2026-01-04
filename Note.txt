@@ -7,6 +7,8 @@ https://cloud.appwrite.io/console/project-syd-annie-notes-project/databases/data
 
 https://reactnative.dev/docs/environment-setup
 https://github.com/appwrite/starter-for-react-native/tree/main
+https://reactnative.dev/docs/textinput#returnkeytype
+
 ==============================================================
 
 PS C:\react> npx create-expo-app@latest notes-app
