@@ -89,6 +89,15 @@ const NoteScreen = () => {
     ]);
   };
 
+  // Edit Note
+  const editNote = async (id, newText) => {
+    if (!newText.trim()) {
+      // In theory, we will never get into this because of the logic currently in NoteItem.jsx
+      Alert.alert('Error', 'Note text cannot be empty');
+      return;
+    }
+  };
+
   return (
     <View style={styles.container}>
       {/*<NoteList notes={notes} />*/}
@@ -97,7 +106,7 @@ const NoteScreen = () => {
       ) : (
         <>
           {error && <Text style={styles.errorText}>{error}</Text>}{' '}
-          <NoteList notes={notes} onDelete={deleteNote} onEdit={updateNote} />
+          <NoteList notes={notes} onDelete={deleteNote} onEdit={editNote} />
         </>
       )}
 
