@@ -13,6 +13,16 @@ const AuthScreen = () => {
       <Text style={styles.header}>{isRegistering ? 'Sign Up' : 'Login'}</Text>
 
       {error && <Text style={styles.error}>{error}</Text>}
+
+      <TextInput
+        style={styles.input}
+        placeholder='Email'
+        placeholderTextColor='#aaa'
+        value={email}
+        onChangeText={setEmail}
+        autoCapitalize='none'
+        keyboardType={'email-address'}
+      />
     </View>
   );
 };
