@@ -28,9 +28,11 @@ const NoteItem = ({ note, onDelete }) => {
         <Text style={styles.noteText}>{note.text}</Text>
       )}
 
-      <TouchableOpacity onPress={() => onDelete(note.$id)}>
-        <Text style={styles.delete}>❌</Text>
-      </TouchableOpacity>
+      <View style={styles.actions}>
+        <TouchableOpacity onPress={() => onDelete(note.$id)}>
+          <Text style={styles.delete}>❌</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
