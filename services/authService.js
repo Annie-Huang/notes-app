@@ -27,6 +27,14 @@ const authService = {
       };
     }
   },
+  // Get logged in user
+  async getUser() {
+    try {
+      return await account.get();
+    } catch (error) {
+      return null;
+    }
+  },
 };
 
 export default authService;
