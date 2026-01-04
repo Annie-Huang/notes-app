@@ -7,7 +7,11 @@ const authService = {
     try {
       const response = await account.create(ID.unique(), email, password);
       return response;
-    } catch (error) {}
+    } catch (error) {
+      return {
+        error: error.message || 'Registration failed. Please try again',
+      };
+    }
   },
 };
 
