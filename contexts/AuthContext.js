@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import authService from '../services/authService';
 
 const AuthContext = createContext();
@@ -53,8 +53,13 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthProvider.Provider value={{ user, login, register, logout, loading }}>
+    <AuthContext.Provider value={{ user, login, register, logout, loading }}>
       {children}
-    </AuthProvider.Provider>
+    </AuthContext.Provider>
   );
 };
+
+export const useAuth = () => useContext(AuthContext);
+
+// children component access context through:
+// const { login } = useAuth();
