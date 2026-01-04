@@ -4,7 +4,7 @@ import { useState } from 'react';
 const AuthScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setComfirmPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [isRegistering, setIsRegistering] = useState(false);
   const [error, setError] = useState(false);
 
@@ -23,6 +23,26 @@ const AuthScreen = () => {
         autoCapitalize='none'
         keyboardType={'email-address'}
       />
+
+      <TextInput
+        style={styles.input}
+        placeholder='Password'
+        placeholderTextColor='#aaa'
+        value={password}
+        onChangeText={setPassword}
+        secureTextEntry // mask the character user enters
+      />
+
+      {isRegistering && (
+        <TextInput
+          style={styles.input}
+          placeholder='Confirm Password'
+          placeholderTextColor='#aaa'
+          value={confirmPassword}
+          onChangeText={setConfirmPassword}
+          secureTextEntry // mask the character user enters
+        />
+      )}
     </View>
   );
 };
