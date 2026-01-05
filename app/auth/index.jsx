@@ -1,4 +1,10 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { useState } from 'react';
 
 const AuthScreen = () => {
@@ -43,6 +49,12 @@ const AuthScreen = () => {
           secureTextEntry // mask the character user enters
         />
       )}
+
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>
+          {isRegistering ? 'Sign Up' : 'Login'}
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };
