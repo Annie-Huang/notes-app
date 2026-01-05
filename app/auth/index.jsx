@@ -1,4 +1,5 @@
 import {
+  Alert,
   StyleSheet,
   Text,
   TextInput,
@@ -7,9 +8,11 @@ import {
 } from 'react-native';
 import { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
+import { useRouter } from 'expo-router';
 
 const AuthScreen = () => {
   const { login, register } = useAuth();
+  const router = useRouter();
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -35,6 +38,13 @@ const AuthScreen = () => {
     } else {
       response = await login(email, password);
     }
+
+    if (response?.error) {
+      Alert.alert('Error', response.error);
+      return;
+    }
+
+    router.replace('/notes');
   };
 
   return (
