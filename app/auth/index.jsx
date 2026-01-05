@@ -57,7 +57,7 @@ const AuthScreen = () => {
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => setIsRegistering(!isRegistering)}>
-        <Text style={styles.switch}>
+        <Text style={styles.switchText}>
           {isRegistering
             ? 'Already have an account? Login'
             : "Don't have an account? Sign up"}
@@ -70,8 +70,44 @@ const AuthScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 20,
+    backgroundColor: '#f8f9fa',
+  },
+  header: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    color: '#333',
+  },
+  input: {
+    width: '100%',
+    padding: 12,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 8,
+    marginBottom: 12,
     backgroundColor: '#fff',
+    fontSize: 16,
+  },
+  button: {
+    backgroundColor: '#007bff',
+    paddingVertical: 12,
+    borderRadius: 8,
+    width: '100%',
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  switchText: {
+    marginTop: 10,
+    color: '#007bff',
+    fontSize: 16,
   },
 });
 
