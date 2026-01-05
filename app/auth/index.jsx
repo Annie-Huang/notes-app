@@ -6,8 +6,11 @@ import {
   View,
 } from 'react-native';
 import { useState } from 'react';
+import { useAuth } from '../../contexts/AuthContext';
 
 const AuthScreen = () => {
+  const { login, register } = useAuth();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -18,6 +21,19 @@ const AuthScreen = () => {
     if (!email.trim() || !password.trim()) {
       setError('Email and password are required');
       return;
+    }
+
+    if (isRegistering && password !== confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
+
+    let response;
+
+    if (isRegistering) {
+      response = await register(email, password);
+    } else {
+      response = await login(email, password);
     }
   };
 
