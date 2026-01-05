@@ -70,6 +70,7 @@ const AuthScreen = () => {
         value={password}
         onChangeText={setPassword}
         secureTextEntry // mask the character user enters
+        textContentType='none'
       />
 
       {isRegistering && (
@@ -80,6 +81,7 @@ const AuthScreen = () => {
           value={confirmPassword}
           onChangeText={setConfirmPassword}
           secureTextEntry // mask the character user enters
+          textContentType='none'
         />
       )}
 
