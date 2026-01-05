@@ -83,7 +83,7 @@ const AuthScreen = () => {
         />
       )}
 
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={handleAuth}>
         <Text style={styles.buttonText}>
           {isRegistering ? 'Sign Up' : 'Login'}
         </Text>
