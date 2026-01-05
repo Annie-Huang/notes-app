@@ -1,5 +1,16 @@
 import { Stack } from 'expo-router';
-import { AuthProvider } from '../contexts/AuthContext';
+import { AuthProvider, useAuth } from '../contexts/AuthContext';
+import { Text, TouchableOpacity } from 'react-native';
+
+const HeaderLogout = () => {
+  const { user, logout } = useAuth();
+
+  return user ? (
+    <TouchableOpacity style={styles.logout} onPress={logout}>
+      <Text style={styles.logoutText}>Logout</Text>
+    </TouchableOpacity>
+  ) : null;
+};
 
 const RootLayout = () => {
   /*  return (
