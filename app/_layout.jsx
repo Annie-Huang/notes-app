@@ -39,6 +39,7 @@ const RootLayout = () => {
           headerStyle: { backgroundColor: '#ff8c00' },
           headerTintColor: '#fff',
           headerTitleStyle: { fontSize: 20, fontWeight: 'bold' },
+          headerRight: () => <HeaderLogout />,
           contentStyle: {
             paddingHorizontal: 10,
             paddingTop: 10,
