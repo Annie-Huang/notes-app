@@ -70,7 +70,7 @@ const NoteScreen = () => {
     //   { id: Date.now.toString(), text: newNote },
     // ]);
 
-    const response = await noteService.addNote(newNote);
+    const response = await noteService.addNote(user.$id, newNote);
 
     if (response.error) {
       Alert.alert('Error', response.error);
