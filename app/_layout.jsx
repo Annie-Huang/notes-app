@@ -6,7 +6,7 @@ const HeaderLogout = () => {
   const { user, logout } = useAuth();
 
   return user ? (
-    <TouchableOpacity style={styles.logout} onPress={logout}>
+    <TouchableOpacity style={styles.logoutButton} onPress={logout}>
       <Text style={styles.logoutText}>Logout</Text>
     </TouchableOpacity>
   ) : null;
