@@ -55,7 +55,7 @@ const NoteScreen = () => {
       setError(response.error);
       Alert.alert('Error', response.error);
     } else {
-      setNotes(response.data.data);
+      setNotes(response.data);
       setError(null);
     }
 
