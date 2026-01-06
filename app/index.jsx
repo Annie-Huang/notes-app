@@ -1,9 +1,18 @@
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import PostItImage from '@/assets/images/post-it.png';
 import { useRouter } from 'expo-router';
+import { useAuth } from '../contexts/AuthContext';
+import { useEffect } from 'react';
 
 const HomeScreen = () => {
+  const { user, loading } = useAuth();
   const router = useRouter();
+
+  useEffect(() => {
+    if (!loading && user) {
+      router.replace('/notes');
+    }
+  }, [user, loading]);
 
   return (
     <View style={styles.container}>

@@ -40,6 +40,7 @@ const AuthScreen = () => {
     }
 
     if (response?.error) {
+      // Alert can only be seem in mobile device.
       Alert.alert('Error', response.error);
       return;
     }
