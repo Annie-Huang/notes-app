@@ -15,7 +15,7 @@ const noteService = {
     return { data: response };
   },
   // Add New Note
-  async addNote(text) {
+  async addNote(user_id, text) {
     if (!text) {
       return { error: 'Note text cannot be empty' };
     }
@@ -23,6 +23,7 @@ const noteService = {
     const data = {
       text: text,
       createdAt: new Date().toISOString(),
+      user_id: user_id,
     };
 
     const response = await databaseService.createDocument(
