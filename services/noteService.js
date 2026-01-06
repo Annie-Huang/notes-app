@@ -7,7 +7,22 @@ const colId = process.env.EXPO_PUBLIC_APPWRITE_COL_NOTES_ID;
 
 const noteService = {
   // Get Notes
-  async getNotes() {
+  // async getNotes() {
+  //   const response = await databaseService.listDocuments(dbId, colId);
+  //   if (response.error) {
+  //     return { error: response.error };
+  //   }
+  //   return { data: response };
+  // },
+  async getNotes(userId) {
+    if (!userId) {
+      console.error('Error: Missing userId in getNotes()');
+      return {
+        data: [],
+        error: 'User ID is missing',
+      };
+    }
+
     const response = await databaseService.listDocuments(dbId, colId);
     if (response.error) {
       return { error: response.error };
