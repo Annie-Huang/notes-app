@@ -17,6 +17,7 @@ import { useAuth } from '../../contexts/AuthContext';
 const NoteScreen = () => {
   const router = useRouter();
   const { user, loading: authLoading } = useAuth();
+  // console.log('user', JSON.stringify(user));
 
   // const [notes, setNotes] = useState([
   //   { id: '1', text: 'Note One' },
