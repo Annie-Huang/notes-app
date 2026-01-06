@@ -1,5 +1,5 @@
 import databaseService from './databaseService';
-import { ID } from 'react-native-appwrite';
+import { ID, Query } from 'react-native-appwrite';
 
 // Appwrite database and collection id
 const dbId = process.env.EXPO_PUBLIC_APPWRITE_DB_ID;
@@ -23,7 +23,9 @@ const noteService = {
       };
     }
 
-    const response = await databaseService.listDocuments(dbId, colId);
+    const response = await databaseService.listDocuments(dbId, colId, [
+      Query.equal('user_id', userId),
+    ]);
     if (response.error) {
       return { error: response.error };
     }
