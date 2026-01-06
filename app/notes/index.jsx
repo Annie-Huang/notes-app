@@ -47,7 +47,8 @@ const NoteScreen = () => {
 
   const fetchNotes = async () => {
     setLoading(true);
-    const response = await noteService.getNotes();
+    // const response = await noteService.getNotes();
+    const response = await noteService.getNotes(user.$id);
     console.log('response=', response);
 
     if (response.error) {
