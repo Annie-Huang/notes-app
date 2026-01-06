@@ -133,8 +133,13 @@ const NoteScreen = () => {
         <ActivityIndicator size='large' color='#007bff' />
       ) : (
         <>
-          {error && <Text style={styles.errorText}>{error}</Text>}{' '}
-          <NoteList notes={notes} onDelete={deleteNote} onEdit={editNote} />
+          {error && <Text style={styles.errorText}>{error}</Text>}
+
+          {notes.length === 0 ? (
+            <></>
+          ) : (
+            <NoteList notes={notes} onDelete={deleteNote} onEdit={editNote} />
+          )}
         </>
       )}
 
